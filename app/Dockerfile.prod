@@ -20,7 +20,7 @@ RUN apk update \
 RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host=files.pythonhosted.org --upgrade pip
 RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host=files.pythonhosted.org flake8
 COPY . .
-RUN flake8 --ignore=E501,F401 ./config
+# RUN flake8 --ignore=E501,F401 ./config
 
 # install dependencies
 COPY ./requirements.txt .
