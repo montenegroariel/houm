@@ -103,8 +103,11 @@ class VelocityViewSet(generics.ListAPIView):
         locations = Location.objects.filter(user_id=user_id)
         velocity = 0
         distance = 0
-        latitude_start = locations.first().latitude
-        longitude_start = locations.first().longitude
+        try:
+            latitude_start = locations.first().latitude
+            longitude_start = locations.first().longitude
+        except:
+            return Response({'message': "User not have locations."}, status=status.HTTP_400_BAD_REQUEST)
         time_start = locations.first().end
         for location in locations:
             velocity_list.append({
@@ -126,6 +129,9 @@ class VelocityViewSet(generics.ListAPIView):
                                         velocity_list[-1]["longitude_start"],
                                         velocity_list[-1]["latitude_end"], 
                                         velocity_list[-1]["longitude_end"])
+            
+
+
 
             velocity = self.get_velocity(distance, velocity_list[-1]["time_start"], velocity_list[-1]["time_end"])
         
@@ -147,4 +153,7 @@ class VelocityViewSet(generics.ListAPIView):
         return round(distance,2)
 
     def get_velocity(self, dist_km, time_start, time_end):
-        return dist_km / (time_end - time_start).seconds if time_end > time_start else 0
+        if (time_end - time_start).seconds > 0:
+            return dist_km / (time_end - time_start).seconds
+        else:
+            return 0
