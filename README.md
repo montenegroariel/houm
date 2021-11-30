@@ -80,7 +80,6 @@ Houm Seostax.postman_production.json
 * [Docker](https://www.docker.com/) - Containers
 * [Postgresql](https://www.postgresql.org/) - Base de datos
 
-## Contribuyendo 🖇️
 
 
 ## Expresiones de Gratitud 🎁
