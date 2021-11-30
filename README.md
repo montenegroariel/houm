@@ -10,7 +10,7 @@ git clone https://github.com/montenegroariel/houm.git
 
 cd houm
 
-docker-compose up
+sudo docker-compose up
 
 ### Pre-requisitos 📋
 
@@ -42,6 +42,32 @@ El usuario se registra y una vez que se encuentra logeado puede enviar su ubicac
 
 Se puede importar en postman de manera local el archivo 
 Houm.postman_local.json
+
+## Test ⚙️
+
+Correr el proyecto con docker-compose up
+
+En la consola
+```
+sudo docker ps
+
+CONTAINER ID   IMAGE                    COMMAND                  CREATED        STATUS       PORTS                                                           NAMES
+53ea132deb05   houm_web                 "/usr/src/app/entryp…"   30 hours ago   Up 2 hours   0.0.0.0:8000->8000/tcp, :::8000->8000/tcp                       houm_web_1
+054ef247ff8f   postgres:12.0-alpine     "docker-entrypoint.s…"   30 hours ago   Up 2 hours   5432/tcp                                                        houm_db_1
+41b7583f9021   portainer/portainer-ce   "/portainer"             5 weeks ago    Up 7 hours   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   portainer
+
+...
+copiar el id del contenedor houm_web
+...
+docker exec -it <id_container> python manage.py test
+...
+
+Ejemplo:
+...
+docker exec -it 53ea132deb05 python manage.py test
+
+```
+
 
 Endpoints
 
