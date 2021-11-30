@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "f26b91e5-eba6-4dc9-b8dd-dade631a40de",
+		"name": "Houm Seostax",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "ariel",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "centinela",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "centinela",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "user@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "Usuario",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Registrado",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://houm.seostax.com/register/",
+					"protocol": "https",
+					"host": [
+						"houm",
+						"seostax",
+						"com"
+					],
+					"path": [
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add location",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c56fc86f93222d1912cf48f6593f6d2b8f7591cd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "latitude",
+							"value": "-58.1996264",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "-26.1841717",
+							"type": "text"
+						},
+						{
+							"key": "begin",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "end",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://houm.seostax.com/locations/",
+					"protocol": "https",
+					"host": [
+						"houm",
+						"seostax",
+						"com"
+					],
+					"path": [
+						"locations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "tze45Q3rtzCqTxzW",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "ariel",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "centinela",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://houm.seostax.com/login/",
+					"protocol": "https",
+					"host": [
+						"houm",
+						"seostax",
+						"com"
+					],
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get time",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token f424e7208e123ddf8ddcbe46633f8b456bcba664",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://houm.seostax.com/locations/time/2",
+					"protocol": "https",
+					"host": [
+						"houm",
+						"seostax",
+						"com"
+					],
+					"path": [
+						"locations",
+						"time",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get velocity",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token f424e7208e123ddf8ddcbe46633f8b456bcba664",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://houm.seostax.com/locations/velocity/1/0.034/",
+					"protocol": "https",
+					"host": [
+						"houm",
+						"seostax",
+						"com"
+					],
+					"path": [
+						"locations",
+						"velocity",
+						"1",
+						"0.034",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
