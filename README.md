@@ -38,6 +38,8 @@ sudo apt-get install git docker docker-compose
 
 ## Ejecutando las pruebas ⚙️
 
+El usuario se registra y una vez que se encuentra logeado puede enviar su ubicación. Al guardarse se relaciona con este usuario de forma automática.
+
 Se puede importar en postman de manera local el archivo 
 Houm.postman_local.json
 
