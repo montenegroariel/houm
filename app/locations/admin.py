@@ -3,7 +3,7 @@ from .models import Location
 
 
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ['user', 'latitude','longitude' ,'date_time']
+    list_display = ['user', 'latitude','longitude' ,'begin','end']
     search_fields = ('user',)
 
     def save_model(self, request, obj, form, change):
